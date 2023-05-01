@@ -1,0 +1,18 @@
+<html>
+ <head><link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>"></head>
+  <body>
+
+     <ul>
+      <% if @a == true %>
+      <li><a href="/log-out">Click to logout</a></li>
+      <li><a href="/bookings">Click to view bookings</a></li>
+      <li><a href="/account">Manage Account</a></li>
+    <% else %>
+      <li><a href="/log-in">Click to login</a></li>
+    <% end %>
+    </ul>
+    <h1>You're signed up to MakersBnB</h1>
+
+
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="<%= url("/style.css")%>">
+  </head>
+  <body>
+     <div class="navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/log-out">Logout</a></li>
+          <li><a href="/account">Manage Account</a></li>
+        </ul>
+        </div>
+    <h1>Book a space</h1>
+    <p>
+     Title: <%= @property.title %>
+    </p>
+    <p>
+     Description: <%= @property.description %>
+    </p>
+      <p>
+
+     Daily rate: £<%= @property.daily_rate %>
+    </p>
+
+      <% @dates.each do |date| %>
+      <p>
+      First available: <%= date.first_available %> Last available: <%= date.last_available %> 
+      </p>
+    <% end %>
+   
+  <% if @try_again %>
+  <p>
+
+
+  This property is unavailable on the dates you selected
+  </p>
+  <% end %>
+
+<form method="POST" action="/bookings?property_id=<%= @property.id %>"> 
+      <div>
+        <label>When would you like to book from</label>
+        <input type="date" name="start_date" />
+      </div>
+      <div>
+        <label>When would you like to book to</label>
+        <input type="date" name="end_date" />
+        <br>
+        <br><input type="submit" value="Request Booking">
+      </div>
+  </body>
+</form>
+</html>

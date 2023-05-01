@@ -1,0 +1,23 @@
+<html>
+  <head><link rel="stylesheet" type="text/css" href="<%= url("/bookings.css") %>"></head>
+  <body>
+   <div class="navigation">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/log-out">Logout</a></li>
+      <li><a href="/account">Manage Account</a></li>
+    </ul>
+  </div>
+
+    <h1>Your Bookings</h1>
+      <% @trips.each do |trip| %>
+        <div class="container">
+          Your trip to <%= trip.title %> 
+          <br>Starts on <%= trip.start_date %> 
+          <br>Ends on <%= trip.end_date %> 
+          <br>A bit about your destination:
+          <br><%= trip.description %>
+        </div>
+      <% end %>
+  </body>
+</html>

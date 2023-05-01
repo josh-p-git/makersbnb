@@ -1,0 +1,34 @@
+
+<html>
+  <head><link rel="stylesheet" type="text/css" href="<%= url("/homepage.css") %>"></head>
+  <body>
+    <ul>
+      <% if @a == true %>
+      <li><a href="/log-out">Click to logout</a></li>
+      <li><a href="/bookings">Click to view bookings</a></li>
+      <li><a href="/account">Manage Account</a></li>
+      <li><a href="/add-a-space">Add A Space</a></li>
+    <% else %>
+      <li><a href="/sign-up">Click to sign up</a></li>
+      <li><a href="/log-in">Click to login</a></li>
+    <% end %>
+    </ul>
+
+    <h1>MakersBnB</h1>
+    
+    <% if @a == true %>
+      <h2>Welcome to MakersBnB</h2>
+    <% else %>
+    <% end %>
+
+    <% counter = 0 %>
+    <div class="container">
+      <% @properties.each do |property| %>
+          <% counter += 1 %>      
+      <a class="link" href="/property/<%= property.id %>"><%= property.title %> £<%= property.daily_rate %>
+      <img id="drag1" src="/images/image<%= counter %>.png"  width="250" height="300">
+      </a>
+      <% end %>
+    </div>
+  </body>
+</html>

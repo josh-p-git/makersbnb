@@ -1,0 +1,27 @@
+<html>
+  <head><link rel="stylesheet" type="text/css" href="<%= url("/style.css") %>"></head>
+  <body>
+  <ul>
+    <% if @a == true %>
+    <li><a href="/log-out">Click to logout</a></li>
+    <li><a href="/bookings">Click to view bookings</a></li>
+    <li><a href="/account">Manage Account</a></li>
+  <% else %>
+    <li><a href="/sign-up">Click to sign up</a></li>
+  <% end %>
+  </ul>
+    <h1>Log In to MakersBnB</h1>
+
+    <div>
+    <form action="/log-in" method="post">
+      <label>Email Address:</label>
+      <input type="text" name="email">
+      <label>Password:</label>
+      <input type="password" name="password">
+      <input type="submit" name="Submit">
+    </form>
+
+    </div>
+
+  </body>
+</html>

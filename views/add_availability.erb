@@ -1,0 +1,36 @@
+<html>
+  <head><link rel="stylesheet" type="text/css" href="<%= url("/addavail.css")%>"></head>
+  <body>
+    <div class="navigation">
+      <ul>
+        <li><a href="/">Homepage</a></li>
+        <li><a href="/log-out">Logout</a></li>
+        <li><a href="/bookings">View bookings</a></li>
+      </ul>
+    </div>
+
+    <h1>Add More Availability</h1>
+
+    Property title: <%= @p.title %>
+    Property description: <%= @p.description %>
+    Property address: <%= @p.address %>
+
+      <div class="add_avail_form">
+        <form action="/add-availability/<%= @p.id %>" method="POST">
+
+        <label for="first_available">Available from:</label>
+        <input type="date" name="first_available" />
+
+        <label for="last_available">Available to:</label>
+        <input type="date" name="last_available" />
+        <br>
+        <br>
+        <input type="submit" value="Add Availability" />
+      </div>
+
+      <div class="add_another_space">
+        <br><a href="/add-a-space">Add another space</a>
+      </div>
+    </form>
+  </body>
+</html>
